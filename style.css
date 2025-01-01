@@ -50,15 +50,15 @@ h2 {
     background: #ff85c2;
 }
 
-.tab-content {
+.tab-content, .ac-tab-content {
     display: none;
 }
 
-.tab-content.hidden {
+.tab-content.hidden, .ac-tab-content.hidden {
     display: none;
 }
 
-.tab-content.active {
+.tab-content.active, .ac-tab-content.active {
     display: block;
 }
 
@@ -81,6 +81,10 @@ footer {
 
 a {
     color: #ff69b4;
+}
+
+img {
+    width: 80%;
 }
 
 /* Additional styles for nested tabs */
