@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aimee So | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Aimee So</h1>
+        <p>Software Engineer | Backend Developer | Application Developer | Creative Problem Solver</p>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hi! I'm a software engineer passionate about building tailored solutions for businesses.
+                Explore my work below!</p>
+        </section>
+
+        <section id="projects">
+            <h2>Professional Projects</h2>
+            <div class="tabs">
+                <button class="tab-button" onclick="showTab('backend')">Backend Development</button>
+                <button class="tab-button" onclick="showTab('wordpress')">WordPress</button>
+                <button class="tab-button" onclick="showTab('etl')">ETL Development</button>
+                <button class="tab-button" onclick="showTab('crm')">CRM Automations</button>
+                <button class="tab-button" onclick="showTab('standalone')">Standalone Applications</button>
+            </div>
+
+            <!-- Backend Development -->
+            <div id="backend" class="tab-content">
+                <h3>Backend Development</h3>
+                <div class="nested-tabs">
+                    <button class="nested-tab-button" onclick="showNestedTab('php')">PHP</button>
+                    <button class="nested-tab-button" onclick="showNestedTab('java')">Java</button>
+                    <button class="nested-tab-button" onclick="showNestedTab('python')">Python</button>
+                </div>
+
+                <!-- PHP -->
+                <div id="php" class="nested-tab-content">
+                    <h4>PHP Projects</h4>
+                    <div class="project">
+                        <h4>Publication Subscription Platform Revamp</h4>
+                        <p>Designed and developed the database and RESTful APIs based on both legacy and updated
+                            business logic.</p>
+                        <p>Addressed complex user business logic for publication visibility settings determined by date,
+                            categories, and subscription plans. This required collaboration with the client using
+                            flowcharts and scenarios to map out the logic before implementation.</p>
+                        <p><strong>Achieved an 80% reduction</strong> in manual subscription processing and a
+                            <strong>90% reduction</strong> in manual payment collection by automating subscription
+                            management, including shopping cart functionality and Stripe payment integration.
+                        </p>
+                        <p><strong>Technologies:</strong> Laravel, PHP, MySQL</p>
+                    </div>
+                    <div class="project">
+                        <h4>Jewelry Manufactory System</h4>
+                        <p>Designed and implemented the database and RESTful APIs to support production workflows.</p>
+                        <p>Optimized database performance by using view tables to handle intricate auto-calculations for
+                            production operations.</p>
+                        <p>Migrated <strong>90%</strong> of Excel records into a database and digitized
+                            <strong>90%</strong> of manual paperwork, including quotations and invoices.
+                        </p>
+                        <p><strong>Technologies:</strong> Laravel, PHP, MySQL</p>
+                    </div>
+                    <div class="project">
+                        <h4>Water Pipeline Order System</h4>
+                        <p>Developed the database and RESTful APIs to streamline ordering workflows for pipelines.</p>
+                        <p>Implemented auto-calculations for pipeline weight and pricing, accounting for variations
+                            across brands and features. Integrated quotation generation and shipping workflows for
+                            seamless operation.</p>
+                        <p><strong>Improved operational efficiency</strong> by automating 85% of the manual processes
+                            for order management and pricing calculations.</p>
+                        <p><strong>Technologies:</strong> Laravel, PHP, MySQL</p>
+                    </div>
+                    <div class="project">
+                        <h4>E-Voucher Offer Form System</h4>
+                        <p>Developed and deployed the database and RESTful APIs to support customizable e-voucher
+                            claiming forms.</p>
+                        <p>Enabled claim history tracking and statistical reporting functionalities.</p>
+                        <p><strong>Technologies:</strong> Laravel, PHP, MySQL</p>
+                    </div>
+                </div>
+
+                <!-- Java -->
+                <div id="java" class="nested-tab-content hidden">
+                    <h4>Java Projects</h4>
+                    <div class="project">
+                        <h4>Gym Class Booking System</h4>
+                        <p>Designed and built the database and RESTful APIs to replace manual booking processes.</p>
+                        <p>Reduced reliance on Excel for records by <strong>95%</strong> and added functionality for
+                            auto-generating class reports with complex logic and calculations.</p>
+                        <p><strong>Technologies:</strong> Spring Boot, Java, MySQL</p>
+                    </div>
+                    <div class="project">
+                        <h4>Booking Systems for Multiple Clients</h4>
+                        <p>Maintained and enhanced 3+ booking systems tailored for various clients.</p>
+                        <p>Common features included an admin dashboard and a customer interface, with custom business
+                            logic implemented for each client.</p>
+                        <p><strong>Technologies:</strong> Spring Boot, Java, MySQL</p>
+                    </div>
+                </div>
+
+                <!-- Python -->
+                <div id="python" class="nested-tab-content hidden">
+                    <h4>Python Projects</h4>
+                    <div class="project">
+                        <h4>Internal Alert System Enhancement</h4>
+                        <p>Improved existing databases and RESTful APIs to enhance system functionality.</p>
+                        <p>Added maintenance schedules with multiple types (e.g., one-off, daily, weekly, yearly). For
+                            recurring schedules, individual entries were tied to a parent ID, allowing flexible
+                            management of single or grouped schedules.</p>
+                        <p>Introduced a notification tree to streamline operations.</p>
+                        <p><strong>Technologies:</strong> Python, Pandas</p>
+                    </div>
+                </div>
+            </div>
+
+                <!-- WordPress -->
+                <div id="wordpress" class="tab-content hidden">
+                    <h3>WordPress</h3>
+                    <div class="project">
+                        <h4>6+ Public-Facing Websites</h4>
+                        <p>Delivered fully customized WordPress websites with bespoke plugins and functionality for
+                            diverse sectors.</p>
+                        <p>Typically set up Advanced Custom Fields (ACF) to create custom post types, fields, and
+                            taxonomies. Helped define technical specifications, including transforming fields based on
+                            functional designs. For instance, a single selection field was converted into taxonomies to
+                            serve as categories.</p>
+                        <p>Re-designed listing and detail pages of custom post types based on selected theme.</p>
+                        <p><strong>Clients:</strong> A multinational technology company, 3+ academic departments in
+                            universities, 2+ small businesses.</p>
+                        <p><strong>Technologies:</strong> PHP, HTML, CSS, JavaScript</p>
+                    </div>
+                </div>
+
+                <!-- ETL -->
+                <div id="etl" class="tab-content hidden">
+                    <h3>ETL Development</h3>
+                    <div class="project">
+                        <h4>GA4 Data Extraction and Transformation Workflow</h4>
+                        <p>Transformed daily GA4 data in BigQuery into actionable user insights.</p>
+                        <p>Verified data integrity through extensive testing using dummy data and multiple scenarios to
+                            ensure correctness.</p>
+                        <p>Developed a daily cron job to generate and deliver CSV data via SFTP.</p>
+                        <p><strong>Technologies:</strong> SQL, Python, Google BigQuery</p>
+                    </div>
+                    <div class="project">
+                        <h4>Data Workflow for GA4 and Offline Data</h4>
+                        <p>Designed Delta tables and implemented PySpark notebooks for Data Warehouse solutions.</p>
+                        <p>Processed 100,000+ rows per workflow to provide business insights.</p>
+                        <p>Studied API guides of platforms like Google Ads and Facebook Ads and transformed data to
+                            match required formats.</p>
+                        <p>Integrated data with advertising platforms via APIs.</p>
+                        <p><strong>Technologies:</strong> Python, SQL, Azure Databricks, Azure Data Lakes, Azure Key
+                            Vault, Google BigQuery</p>
+                    </div>
+                </div>
+
+                <!-- CRM -->
+                <div id="crm" class="tab-content hidden">
+                    <h3>CRM Campaign Automations</h3>
+                    <div class="project">
+                        <h4>Ongoing Campaign Automation</h4>
+                        <p>Designed and implemented a centralized lead data extension.</p>
+                        <p>Set up 8+ campaigns featuring EDMs and AMPscript-driven Cloud Pages, resulting in 3,000+ new
+                            leads.</p>
+                        <p>Created SQL query activities for lead segmentation.</p>
+                        <p><strong>Technologies:</strong> SQL, AMPscript, Salesforce Marketing Cloud</p>
+                    </div>
+                </div>
+
+                <!-- Standalone Applications -->
+                <div id="standalone" class="tab-content hidden">
+                    <h3>Standalone Applications</h3>
+                    <div class="project">
+                        <h4>Student Exercise Record System</h4>
+                        <p>Developed a web application to record student exercise activities for an elementary school.
+                        </p>
+                        <p>Added features such as ambassador shift schedules and a detailed chart dashboard.</p>
+                        <p>Built using the Laravel MVC framework for both frontend and backend.</p>
+                        <p><strong>Technologies:</strong> Laravel, PHP, MySQL, HTML, CSS, JavaScript</p>
+                    </div>
+                    <div class="project">
+                        <h4>Multiple Web Mini-games</h4>
+                        <p>Developed 4+ web mini-games to educate elementary school Maths.
+                        </p>
+                        <p>Added features such as ambassador shift schedules and a detailed chart dashboard.</p>
+                        <p>Built using the Canvas tag in HTML and intesive JavaScript functions.</p>
+                        <p><strong>Technologies:</strong> JavaScript, HTML, CSS</p>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact: <a href="mailto:yourname@example.com">yourname@example.com</a></p>
+        <p>GitHub: <a href="https://github.com/username">github.com/username</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
