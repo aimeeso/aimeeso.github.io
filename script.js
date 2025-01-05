@@ -63,3 +63,21 @@ document.addEventListener('DOMContentLoaded', () => {
     firstNestedTab.classList.add('active');
   }
 });
+
+// Show the button when the user scrolls down
+window.addEventListener('scroll', () => {
+  const goToTopButton = document.getElementById('go-to-top');
+  if (window.scrollY > 300) {
+      goToTopButton.style.display = 'block';
+  } else {
+      goToTopButton.style.display = 'none';
+  }
+});
+
+// Scroll smoothly to the top
+function scrollToTop() {
+  window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+  });
+}
