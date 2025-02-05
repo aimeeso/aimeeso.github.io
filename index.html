@@ -4,300 +4,755 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aimee So | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Aimee So - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/YOUR_FONT_AWESOME_KIT.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #17153B;
+            scroll-behavior: smooth;
+            /* Enables smooth scrolling */
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #BB8493;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 1rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            background: url('images/3d-illustration-blue-purple-futuristic-sci-fi-techno-lights-cool-background.jpg') center/cover;
+            color: white;
+            padding-top: 5rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+        }
+
+        .section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: black;
+            color: white;
+        }
+
+        .skills-section {
+            background: black;
+            color: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title,
+        h2 {
+            font-size: 32px;
+            color: #F7CFD8;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .skill-category h3 {
+            font-size: 20px;
+            color: #A6F1E0;
+            margin-bottom: 15px;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #ffffff;
+            gap: 8px;
+        }
+
+        .skill-item img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .project-category {
+            margin-bottom: 2rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            padding-top: 1rem;
+        }
+
+        .project-card {
+            background: #BB8493;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        #projects {
+            padding: 40px;
+            background-color: #0a0a0a;
+            color: white;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #f7cfd8;
+        }
+
+        .project-category {
+            margin-bottom: 40px;
+        }
+
+        .project-category h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #a6f1e0;
+            text-align: left;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            justify-content: center;
+            /* Centers the grid */
+            gap: 20px;
+            max-width: 1200px;
+            /* Prevents too-wide stretching */
+            margin: 0 auto;
+            /* Centers the grid container */
+        }
+
+
+        .project-card {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: left;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .project-image {
+            width: 100%;
+            /* Makes sure it takes the full width of the container */
+            aspect-ratio: 16 / 9;
+            /* Forces 5:4 aspect ratio */
+            object-fit: cover;
+            /* Crops the image while keeping the center */
+            border-radius: 8px;
+            /* Optional: Adds rounded corners for a polished look */
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 10px 0;
+        }
+
+        .tag {
+            background-color: #f7cfd8;
+            color: #0a0a0a;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+        .project-title {
+            font-size: 1.5em;
+            margin: 10px 0;
+            color: #f4f8d3;
+        }
+
+        .project-duration {
+            font-size: 1em;
+            color: #a6f1e0;
+        }
+
+        .project-description {
+            font-size: 1em;
+            margin: 10px 0;
+            color: #cccccc;
+        }
+
+        .project-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1em;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+            width: 100px;
+        }
+
+        .live-btn {
+            background-color: #73c7c7;
+            color: #0a0a0a;
+        }
+
+        .github-btn {
+            background-color: #f7cfd8;
+            color: #0a0a0a;
+        }
+    </style>
 </head>
 
-<!-- Quick Menu -->
-<nav class="quick-menu">
-    <a href="#about">About Me</a>
-    <a href="#projects">Professional Development</a>
-    <a href="#academic">Academic Development</a>
-</nav>
-
 <body>
-    <header>
-        <h1>🌸 Aimee So 🌸</h1>
-        <p>✨ Software Engineer | Backend Developer | Application Developer | Creative Problem Solver ✨</p>
+    <!-- Your existing HTML content -->
+    <header class="Header__container">
+        <div class="Header__left">
+            <div class="Header__title">
+                <h1>Aimee So</h1>
+            </div>
+        </div>
+        <menu class="nav-links">
+            <li class="Header__menuItem"><a href="#about">About</a></li>
+            <li class="Header__menuItem"><a href="#skills">Skills</a></li>
+            <li class="Header__menuItem"><a href="#experience">Experience</a></li>
+            <li class="Header__menuItem"><a href="#projects">Projects</a></li>
+            <li class="Header__menuItem"><a href="#contact">Contact</a></li>
+        </menu>
     </header>
-
     <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hi! I'm a software engineer passionate about building tailored solutions for businesses.</p>
-            <ul>
-                <li>📍 Based in Toronto, Canada 🇨🇦</li>
-                <li>🛠 4+ years of professional experience in software development and IT solutions.</li>
-                <li>👩‍🎓 Bachelor degree in Computer Engineering.</li>
-            </ul>
-            <p>Explore my work below!</p>
-        </section>
-
-        <section id="projects">
-            <h2>Professional Projects</h2>
-            <div class="tabs">
-                <button class="tab-button" onclick="showTab('backend')">Backend Development</button>
-                <button class="tab-button" onclick="showTab('wordpress')">WordPress</button>
-                <button class="tab-button" onclick="showTab('etl')">ETL Development</button>
-                <button class="tab-button" onclick="showTab('crm')">CRM Automations</button>
-                <button class="tab-button" onclick="showTab('standalone')">Standalone Applications</button>
+        <section class="Hero">
+            <div class="Hero__content">
+                <h2 class="Hero__title">Hi, I am Aimee So</h2>
+                <p class="Hero__subtitle">Each line, like every flake, may seem small on its own, but together they
+                    create something beautiful and powerful.</p>
+                <!-- <div class="Hero__action" role="button" tabindex=0><span class="Hero__actionText"> Book now</span></div> -->
             </div>
-
-            <!-- Backend Development -->
-            <div id="backend" class="tab-content">
-                <h3>Backend Development</h3>
-                <div class="nested-tabs">
-                    <button class="nested-tab-button" onclick="showNestedTab('php')">PHP</button>
-                    <button class="nested-tab-button" onclick="showNestedTab('java')">Java</button>
-                    <button class="nested-tab-button" onclick="showNestedTab('python')">Python</button>
-                </div>
-
-                <!-- PHP -->
-                <div id="php" class="nested-tab-content">
-                    <h4>PHP Projects</h4>
-                    <div class="project">
-                        <h4>Publication Subscription Platform Revamp</h4>
-                        <p><img src="images/aper_1.png"></p>
-                        <p><img src="images/aper_2.png"></p>
-                        <p>Designed and developed the database and RESTful APIs based on both legacy and updated
-                            business logic.</p>
-                        <p>Addressed complex user business logic for publication visibility settings determined by date,
-                            categories, and subscription plans. This required collaboration with the client using
-                            flowcharts and scenarios to map out the logic before implementation.</p>
-                        <p><strong>Achieved an 80% reduction</strong> in manual subscription processing and a
-                            <strong>90% reduction</strong> in manual payment collection by automating subscription
-                            management, including shopping cart functionality and Stripe payment integration.
-                        </p>
-                        <p><strong>Technologies:</strong> Laravel, PHP, MySQL</p>
-                    </div>
-                    <div class="project">
-                        <h4>B2B E-learning Platform</h4>
-                        <p><img src="images/elearing_1.png"></p>
-                        <p><img src="images/elearing_2.png"></p>
-                        <p>Developed and maintained RESTful APIs and database schemas for a robust e-learning platform
-                            tailored for enterprise clients.</p>
-                        <p>Enhanced backend functionality with custom features, such as role-based access control and
-                            interactive learning modules, to improve user engagement.</p>
-                        <p>Implemented optimized database schemas to handle high-volume concurrent users efficiently,
-                            ensuring seamless scalability.</p>
-                        <p>Maintained and upgraded existing platforms, addressing critical bugs and optimizing
-                            performance to support over 3,000+ active users for a key insurance client.</p>
-                        <p>Collaborated closely with frontend developers and project managers to align platform
-                            enhancements with business requirements.</p>
-                        <p><strong>Technologies:</strong> Laravel, PHP, MySQL, SQL</p>
-                    </div>
-                    <div class="project">
-                        <h4>Jewelry Manufactory System</h4>
-                        <p>Designed and implemented the database and RESTful APIs to support production workflows.</p>
-                        <p>Optimized database performance by using view tables to handle intricate auto-calculations for
-                            production operations.</p>
-                        <p>Migrated <strong>90%</strong> of Excel records into a database and digitized
-                            <strong>90%</strong> of manual paperwork, including quotations and invoices.
-                        </p>
-                        <p><strong>Technologies:</strong> Laravel, PHP, MySQL</p>
-                    </div>
-                    <div class="project">
-                        <h4>Water Pipeline Order System</h4>
-                        <p>Developed the database and RESTful APIs to streamline ordering workflows for pipelines.</p>
-                        <p>Implemented auto-calculations for pipeline weight and pricing, accounting for variations
-                            across brands and features. Integrated quotation generation and shipping workflows for
-                            seamless operation.</p>
-                        <p><strong>Improved operational efficiency</strong> by automating 85% of the manual processes
-                            for order management and pricing calculations.</p>
-                        <p><strong>Technologies:</strong> Laravel, PHP, MySQL</p>
-                    </div>
-                    <div class="project">
-                        <h4>E-Voucher Offer Form System</h4>
-                        <p>Developed and deployed the database and RESTful APIs to support customizable e-voucher
-                            claiming forms.</p>
-                        <p>Enabled claim history tracking and statistical reporting functionalities.</p>
-                        <p><strong>Technologies:</strong> Laravel, PHP, MySQL</p>
-                    </div>
-                </div>
-
-                <!-- Java -->
-                <div id="java" class="nested-tab-content hidden">
-                    <h4>Java Projects</h4>
-                    <div class="project">
-                        <h4>Gym Class Booking System</h4>
-                        <p>Designed and built the database and RESTful APIs to replace manual booking processes.</p>
-                        <p>Reduced reliance on Excel for records by <strong>95%</strong> and added functionality for
-                            auto-generating class reports with complex logic and calculations.</p>
-                        <p><strong>Technologies:</strong> Spring Boot, Java, MySQL</p>
-                    </div>
-                    <div class="project">
-                        <h4>Booking Systems for Multiple Clients</h4>
-                        <p>Maintained and enhanced 3+ booking systems tailored for various clients.</p>
-                        <p>Common features included an admin dashboard and a customer interface, with custom business
-                            logic implemented for each client.</p>
-                        <p><strong>Technologies:</strong> Spring Boot, Java, MySQL</p>
-                    </div>
-                </div>
-
-                <!-- Python -->
-                <div id="python" class="nested-tab-content hidden">
-                    <h4>Python Projects</h4>
-                    <div class="project">
-                        <h4>Internal Alert System Enhancement</h4>
-                        <p>Improved existing databases and RESTful APIs to enhance system functionality.</p>
-                        <p>Added maintenance schedules with multiple types (e.g., one-off, daily, weekly, yearly). For
-                            recurring schedules, individual entries were tied to a parent ID, allowing flexible
-                            management of single or grouped schedules.</p>
-                        <p>Introduced a notification tree to streamline operations.</p>
-                        <p><strong>Technologies:</strong> Python, Pandas</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- WordPress -->
-            <div id="wordpress" class="tab-content hidden">
-                <h3>WordPress</h3>
-                <div class="project">
-                    <h4>6+ Public-Facing Websites</h4>
-                    <p><img src="images/wordpress_1.png"></p>
-                    <p><img src="images/wordpress_2.png"></p>
-                    <p>Delivered fully customized WordPress websites with bespoke plugins and functionality for
-                        diverse sectors.</p>
-                    <p>Typically set up Advanced Custom Fields (ACF) to create custom post types, fields, and
-                        taxonomies. Helped define technical specifications, including transforming fields based on
-                        functional designs. For instance, a single selection field was converted into taxonomies to
-                        serve as categories.</p>
-                    <p>Re-designed listing and detail pages of custom post types based on selected theme.</p>
-                    <p><strong>Clients:</strong> A multinational technology company, 3+ academic departments in
-                        universities, 2+ small businesses.</p>
-                    <p><strong>Technologies:</strong> PHP, HTML, CSS, JavaScript</p>
-                </div>
-            </div>
-
-            <!-- ETL -->
-            <div id="etl" class="tab-content hidden">
-                <h3>ETL Development</h3>
-                <div class="project">
-                    <h4>GA4 Data Extraction and Transformation Workflow</h4>
-                    <p>Transformed daily GA4 data in BigQuery into actionable user insights.</p>
-                    <p>Verified data integrity through extensive testing using dummy data and multiple scenarios to
-                        ensure correctness.</p>
-                    <p>Developed a daily cron job to generate and deliver CSV data via SFTP.</p>
-                    <p><strong>Technologies:</strong> SQL, Python, Google BigQuery</p>
-                </div>
-                <div class="project">
-                    <h4>Data Workflow for GA4 and Offline Data</h4>
-                    <p>Designed Delta tables and implemented PySpark notebooks for Data Warehouse solutions.</p>
-                    <p>Processed 100,000+ rows per workflow to provide business insights.</p>
-                    <p>Studied API guides of platforms like Google Ads and Facebook Ads and transformed data to
-                        match required formats.</p>
-                    <p>Integrated data with advertising platforms via APIs.</p>
-                    <p><strong>Technologies:</strong> Python, SQL, Azure Databricks, Azure Data Lakes, Azure Key
-                        Vault, Google BigQuery</p>
-                </div>
-            </div>
-
-            <!-- CRM -->
-            <div id="crm" class="tab-content hidden">
-                <h3>CRM Campaign Automations</h3>
-                <div class="project">
-                    <h4>Ongoing Campaign Automation</h4>
-                    <p>Designed and implemented a centralized lead data extension.</p>
-                    <p>Set up 8+ campaigns featuring EDMs and AMPscript-driven Cloud Pages, resulting in 3,000+ new
-                        leads.</p>
-                    <p>Created SQL query activities for lead segmentation.</p>
-                    <p><strong>Technologies:</strong> SQL, AMPscript, Salesforce Marketing Cloud</p>
-                </div>
-            </div>
-
-            <!-- Standalone Applications -->
-            <div id="standalone" class="tab-content hidden">
-                <h3>Standalone Applications</h3>
-                <div class="project">
-                    <h4>Student Exercise Record System</h4>
-                    <p><img src="images/sport_1.png"></p>
-                    <p><img src="images/sport_2.png"></p>
-                    <p>Developed a web application to record student exercise activities for an elementary school.
-                    </p>
-                    <p>Added features such as ambassador shift schedules and a detailed chart dashboard.</p>
-                    <p>Built using the Laravel MVC framework for both frontend and backend.</p>
-                    <p><strong>Technologies:</strong> Laravel, PHP, MySQL, HTML, CSS, JavaScript</p>
-                </div>
-                <div class="project">
-                    <h4>Multiple Web Mini-games</h4>
-                    <p>Developed 4+ web mini-games to educate elementary school Maths.
-                    </p>
-                    <p>Added features such as ambassador shift schedules and a detailed chart dashboard.</p>
-                    <p>Built using the Canvas tag in HTML and intesive JavaScript functions.</p>
-                    <p><strong>Technologies:</strong> JavaScript, HTML, CSS</p>
-                </div>
-            </div>
-        </section>
-
-
-        <section id="academic">
-            <h2>Academic Projects</h2>
-            <div class="tabs">
-                <button class="tab-button" onclick="showAcTab('fyp')">Final Year Project</button>
-                <button class="tab-button" onclick="showAcTab('covid')">Web Programming Course Project</button>
-                <button class="tab-button" onclick="showAcTab('gopher')">Application Project (Exchange)</button>
-            </div>
-
-            <!-- FYP -->
-            <div id="fyp" class="ac-tab-content active">
-                <h3>Final Year Project (2019-2020)</h3>
-                <div class="project">
-                    <h4>TRAP: A VR and Mobile Cross-platform Networking Game</h4>
-                    <p><a href="https://www.cse.ust.hk/ug/fyp/posters/gallery/2019-2020/DESCECI1.mp4"
-                            target="_blank">Project Video</a>
-                    </p>
-                    <p>Developed a cross-platform co-op game for VR and mobile.</p>
-                    <p>Specially designed the game characters for VR and mobile players so players can enjoy the game
-                        even they are using different devices.</p>
-                    <p><strong>Award: </strong>Best Final Year Project Award - Champion (<a
-                            href="https://cpeg.hkust.edu.hk/eng/enrichment_highlight/fyp.html" target="_blank">link</a>)
-                    </p>
-                    <p><strong>Technologies:</strong> Unity, C#</p>
-                </div>
-            </div>
-            <!-- Covid -->
-            <div id="covid" class="ac-tab-content hidden">
-                <h3>Web Programming Course Project</h3>
-                <div class="project">
-                    <h4>Covid-19 information Website</h4>
-                    <p><img src="images/COMP_project_1.PNG"><img src="images/COMP_project_3.PNG"><img
-                            src="images/COMP_project_4.PNG"></p>
-                    <p>Developed a web application for Covid-19 local information, including geograph information, case
-                        details and mini-game.</p>
-                    <p>Developed the frontend of the application.</p>
-                    <p>Collaborated with internation students, who are from Finland and Russia, to complete the project.
-                    </p>
-                    <p><strong>Technologies:</strong> Javascript, Vue.js, HTML, CSS</p>
-                </div>
-            </div>
-            <!-- Gopher -->
-            <div id="gopher" class="ac-tab-content hidden">
-                <h3>Course Project</h3>
-                <div class="project">
-                    <h4>Gopher: A Prototype Application for Companies to Improve Communication</h4>
-                    <p><a href="https://github.com/Gopher2k18/gopher" target="_blank">Project GitHub</a></p>
-                    <p><img src="images/gopher-screenshot.png"></p>
-                    <p>Developed a prototype application to help companies for improve their communication and make it
-                        faster and easier.</p>
-                    <p>Developed the frontend of the application.</p>
-                    <p>Collaborated with internation students, who are from Finland and Russia, to complete the project.
-                    </p>
-                    <p>First introduction to Scrum.</p>
-                    <p><strong>Technologies:</strong> TypeScript, Angular, HTML, CSS</p>
-                </div>
-            </div>
+            <div class="Hero__image" id="Hero__image"></div>
+            <div class="Hero__mask"></div>
+            <canvas id="snowfall" class="Hero__snowfall"></canvas>
         </section>
     </main>
 
-    <footer>
-        <p>Contact: <a href="mailto:yanyan8018@gmail.com">yanyan8018@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/aimeeso">github.com/aimeeso</a></p>
-    </footer>
+    <section id="about" class="section">
+        <div class="about-content">
+            <img src="images/propic.jpg" alt="Profile Picture" class="profile-pic">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>
+                <ul>
+                    <li>📍 Based in Toronto, Canada 🇨🇦</li>
+                    <li>👩‍🎓 Bachelor degree in Computer Engineering</li>
+                    <li>🛠 4+ years of professional experience in software development and IT solutions</li>
+                </ul>
+                </p>
+                <a href="https://www.linkedin.com/in/aimee-so-4b46761a5/" class="btn" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <p class="section-subtitle">Here are some of my skills, on which I have worked</p>
+
+            <div class="skills-grid">
+                <!-- Languages -->
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+                            PHP</div>
+                        <div class="skill-item"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                                alt="Java"> Java</div>
+                        <div class="skill-item"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                                alt="Python"> Python</div>
+                        <div class="skill-item"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                                alt="SQL"> SQL</div>
+                        <div class="skill-item"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                alt="JavaScript"> JavaScript</div>
+                    </div>
+                </div>
+
+                <!-- Databases & Clouds -->
+                <div class="skill-category">
+                    <h3>Databases & Clouds</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                                alt="MySQL"> MySQL</div>
+                        <div class="skill-item"><img
+                                src="https://mariadb.com/wp-content/uploads/2019/11/mariadb-logo-vertical_white.svg"
+                                alt="MariaDB"> MariaDB</div>
+                        <div class="skill-item"><img src="images/azure_databricks.webp" alt="Azure DataBricks"> Azure
+                            DataBricks</div>
+                        <div class="skill-item"><img src="images/bigquery.png" alt="Google BigQuery"> Google BigQuery
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frameworks -->
+                <div class="skill-category">
+                    <h3>Frameworks</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><img src="images/laravel.png" alt="Laravel"> Laravel</div>
+                        <div class="skill-item"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/9/98/WordPress_blue_logo.svg"
+                                alt="WordPress"> WordPress</div>
+                        <div class="skill-item"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+                                alt="Spring Boot"> Spring Boot</div>
+                    </div>
+                </div>
+
+                <!-- CRM -->
+                <div class="skill-category">
+                    <h3>CRM</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><img src="images/sfmc.png" alt="Salesforce Marketing Cloud"> Salesforce
+                            Marketing Cloud</div>
+                        <div class="skill-item"><img src="images/hubspot.png" alt="HubSpot"> HubSpot</div>
+                    </div>
+                </div>
+
+                <!-- UI -->
+                <div class="skill-category">
+                    <h3>UI</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                                alt="HTML"> HTML</div>
+                        <div class="skill-item"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                alt="CSS"> CSS</div>
+                    </div>
+                </div>
+
+                <!-- CI/CD -->
+                <div class="skill-category">
+                    <h3>CI/CD</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                            Git</div>
+                        <div class="skill-item"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                                alt="Docker"> Docker</div>
+                        <div class="skill-item"><img src="images/postman.webp" alt="Postman"> Postman</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="experience" class="section">
+        <h2 style="color: #F7CFD8;">Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Analyst Programmer</h3>
+                <h4>digiEasy Company Limited | March 2022 – October 2024</h4>
+                <p>Developed and maintained backend systems for multiple custom web applications using Laravel PHP, Java
+                    Spring Boot, and Python.</p>
+                <p>Built ETL pipelines and automations with Azure Databricks and Google BigQuery.</p>
+                <p>Launched email marketing campaigns, integrated Cloud pages, journey, automations and data extension
+                    in Salesforce Marketing Cloud</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Developer</h3>
+                <h4>Impacts Technology Limited | June 2020 – February 2022</h4>
+                <p>Developed REST APIs and databases for B2B e-learning platforms serving enterprise clients.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Part-time Developer</h3>
+                <h4>IT Wakes Limited | September 2019 – May 2020</h4>
+                <p>Developed a web application for internal use at an elementary school to record student exercise
+                    records.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Summer Internship – Developer</h3>
+                <h4>IT Wakes Limited | June 2019 – August 2019</h4>
+                <p>Developed educational web mini-games for elementary school students using HTML, CSS, and JavaScript.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+
+        <!-- Backend Projects -->
+        <div class="project-category">
+            <h3>Backend</h3>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="images/aper_1.png" alt="Backend" class="project-image">
+                    <div class="project-tags">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                    <h3 class="project-title">Publication Subscription Platform Revamp</h3>
+                    <p class="project-duration">2024 - Present</p>
+                    <p class="project-description">Revamping a large-scale manual subscription-based content platform to
+                        include automated subscriptions, payment and content management.</p>
+                    <!-- <div class="project-buttons">
+                        <a href="#" class="btn live-btn">Live</a>
+                        <a href="#" class="btn github-btn">GitHub</a>
+                    </div> -->
+                </div>
+
+                <div class="project-card">
+                    <img src="images/itrain.png" alt="Backend" class="project-image">
+                    <div class="project-tags">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                    <h3 class="project-title">B2B E-learning Platform</h3>
+                    <p class="project-duration">2020 - 2022</p>
+                    <p class="project-description">Developed an online education system with business integrations.</p>
+                    <!-- <div class="project-buttons">
+                        <a href="#" class="btn live-btn">Live</a>
+                        <a href="#" class="btn github-btn">GitHub</a>
+                    </div> -->
+                </div>
+
+                <div class="project-card">
+                    <img src="images/jewellery.png" alt="Backend" class="project-image">
+                    <div class="project-tags">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                    <h3 class="project-title">Jewelry Manufactory System</h3>
+                    <p class="project-duration">2022 - 2024</p>
+                    <p class="project-description">Developed an internal system for quotation management, process
+                        tracking and report generation.</p>
+                    <!-- <div class="project-buttons">
+                        <a href="#" class="btn live-btn">Live</a>
+                        <a href="#" class="btn github-btn">GitHub</a>
+                    </div> -->
+                </div>
+
+                <div class="project-card">
+                    <img src="images/windmill.png" alt="Backend" class="project-image">
+                    <div class="project-tags">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                    <h3 class="project-title">Water Pipeline Order System</h3>
+                    <p class="project-duration">2022 - 2023</p>
+                    <p class="project-description">Developed an internal systems for quotation management, shipping
+                        tracking and report generation.</p>
+                    <!-- <div class="project-buttons">
+                        <a href="#" class="btn live-btn">Live</a>
+                        <a href="#" class="btn github-btn">GitHub</a>
+                    </div> -->
+                </div>
+
+                <div class="project-card">
+                    <img src="images/onus.jpeg" alt="Backend" class="project-image">
+                    <div class="project-tags">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                    <h3 class="project-title">E-Voucher Offer Form System</h3>
+                    <p class="project-duration">2022 - 2023</p>
+                    <p class="project-description">Support creating and managing customizable e-voucher claiming forms.
+                    </p>
+                    <!-- <div class="project-buttons">
+                        <a href="#" class="btn live-btn">Live</a>
+                        <a href="#" class="btn github-btn">GitHub</a>
+                    </div> -->
+                </div>
+
+                <div class="project-card">
+                    <img src="images/fit24.png" alt="Backend" class="project-image">
+                    <div class="project-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                    <h3 class="project-title">Gym Class Booking System</h3>
+                    <p class="project-duration">2022 - 2023</p>
+                    <p class="project-description">Reduced reliance on Excel for records by 95% and added functionality
+                        for auto-generating class reports with complex logic and calculations.</p>
+                    <!-- <div class="project-buttons">
+                        <a href="#" class="btn live-btn">Live</a>
+                        <a href="#" class="btn github-btn">GitHub</a>
+                    </div> -->
+                </div>
+
+                <div class="project-card">
+                    <img src="images/seathewake.png" alt="Backend" class="project-image">
+                    <div class="project-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                    <h3 class="project-title">Booking Systems</h3>
+                    <p class="project-duration">2022 - 2023</p>
+                    <p class="project-description">Common features included an admin dashboard and a customer interface,
+                        with custom business logic implemented for each client.</p>
+                    <!-- <div class="project-buttons">
+                        <a href="#" class="btn live-btn">Live</a>
+                        <a href="#" class="btn github-btn">GitHub</a>
+                    </div> -->
+                </div>
+
+                <div class="project-card">
+                    <img src="images/secret.jpg" alt="Backend" class="project-image">
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                    <h3 class="project-title">Internal Alert System Enhancement</h3>
+                    <p class="project-duration">2023</p>
+                    <p class="project-description">Added maintenance schedules with multiple types (e.g., one-off,
+                        daily, weekly, yearly). For recurring schedules, individual entries were tied to a parent ID,
+                        allowing flexible management of single or grouped schedules.</p>
+                    <!-- <div class="project-buttons">
+                        <a href="#" class="btn live-btn">Live</a>
+                        <a href="#" class="btn github-btn">GitHub</a>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- WordPress Projects -->
+        <div class="project-category">
+            <h3>WordPress</h3>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="images/km.png" alt="WordPress" class="project-image">
+                    <div class="project-tags">
+                        <span class="tag">WordPress</span>
+                        <span class="tag">ACF</span>
+                        <span class="tag">WPML</span>
+                    </div>
+                    <h3 class="project-title">International Printing Company</h3>
+                    <p class="project-duration">2022 - 2023</p>
+                    <p class="project-description">Developed a corporate website for a global printing business with
+                        customized post types and plugin.</p>
+                </div>
+
+                <div class="project-card">
+                    <img src="images/hku.png" alt="WordPress" class="project-image">
+                    <div class="project-tags">
+                        <span class="tag">WordPress</span>
+                        <span class="tag">ACF</span>
+                    </div>
+                    <h3 class="project-title">University Department</h3>
+                    <p class="project-duration">2022 - 2024</p>
+                    <p class="project-description">Developed the public-facing website for multiple departments with
+                        customized post types and plugin.</p>
+                </div>
+
+                <div class="project-card">
+                    <img src="images/hku2.png" alt="WordPress" class="project-image">
+                    <div class="project-tags">
+                        <span class="tag">WordPress</span>
+                        <span class="tag">ACF</span>
+                    </div>
+                    <h3 class="project-title">University Department</h3>
+                    <p class="project-duration">2022 - 2024</p>
+                    <p class="project-description">Developed the public-facing website for multiple departments with
+                        customized post types and plugin.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ETL Projects -->
+        <div class="project-category">
+            <h3>ETL</h3>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="images/secret.jpg" alt="WordPress" class="project-image">
+                    <div class="project-tags">
+                        <span class="tag">Azure DataBricks</span>
+                        <span class="tag">API Integration</span>
+                        <span class="tag">PySpark</span>
+                        <span class="tag">SQL</span>
+                    </div>
+                    <h3 class="project-title">ETL Pipelines for GA4 and Offline Data</h3>
+                    <p class="project-duration">2024</p>
+                    <p class="project-description">Designed Delta tables and implemented PySpark notebooks for Data Warehouse solutions.Studied API guides of platforms like Google Ads and Facebook Ads and transformed data to match required formats.</p>
+                </div> 
+
+                <div class="project-card">
+                    <img src="images/secret.jpg" alt="WordPress" class="project-image">
+                    <div class="project-tags">
+                        <span class="tag">Google BigQuery</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">Python Cron Job</span>
+                    </div>
+                    <h3 class="project-title">GA4 Data Extraction and Transformation Workflow</h3>
+                    <p class="project-duration">2023 - 2024</p>
+                    <p class="project-description">Transformed daily GA4 data in BigQuery into actionable user insights.
+                        Verified data integrity through extensive testing using dummy data and multiple scenarios to ensure correctness.</p>
+                </div>
+            </div>
+        </div>
+                
+        <!-- CRM -->
+        <div class="project-category">
+            <h3>CRM</h3>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="images/secret.jpg" alt="WordPress" class="project-image">
+                    <div class="project-tags">
+                        <span class="tag">Salesforce Marketing Cloud</span>
+                        <span class="tag">AmpScript</span>
+                        <span class="tag">SQL</span>
+                    </div>
+                    <h3 class="project-title">Email Marketing Campaigns</h3>
+                    <p class="project-duration">2023 - 2024</p>
+                    <p class="project-description">Set up 8+ campaigns featuring EDMs, data extensions, automations and AMPscript-driven Cloud Pages, resulting in 3,000+ new leads.</p>
+                </div> 
+
+                <div class="project-card">
+                    <img src="images/secret.jpg" alt="WordPress" class="project-image">
+                    <div class="project-tags">
+                        <span class="tag">HubSpot</span>
+                        <span class="tag">Node.js</span>
+                    </div>
+                    <h3 class="project-title">Custom HubSpot Workflow Action</h3>
+                    <p class="project-duration">2024</p>
+                    <p class="project-description">Integrated APIs from SMS providers and Salesforce to create custom workflow actions.</p>
+                </div>
+            </div>
+        </div>
+
+                        
+        <!-- standalone -->
+        <div class="project-category">
+            <h3>Standalone Applications</h3>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="images/sport_1.png" alt="WordPress" class="project-image">
+                    <div class="project-tags">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">Javascript</span>
+                    </div>
+                    <h3 class="project-title">Student Exercise Record System</h3>
+                    <p class="project-duration">2019</p>
+                    <p class="project-description">Developed a web application to record student exercise activities for an elementary school.
+                        Added features such as ambassador shift schedules and a detailed chart dashboard.</p>
+                </div> 
+
+                <div class="project-card">
+                    <img src="images/secret.jpg" alt="WordPress" class="project-image">
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">Javascript</span>
+                    </div>
+                    <h3 class="project-title">Web Mini-games</h3>
+                    <p class="project-duration">2018</p>
+                    <p class="project-description">Developed 4+ web mini-games to educate elementary school Maths.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
-
-    <!-- Go to Top Button -->
-    <button id="go-to-top" onclick="scrollToTop()">↑</button>
 
 </html>

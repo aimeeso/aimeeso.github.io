@@ -1,0 +1,279 @@
+body {
+    font-family: Helvetica;
+}
+
+ul {
+    list-style-type: none;
+  }
+
+.timeline {
+    max-width: 800px;
+    margin: auto;
+}
+
+.timeline-item {
+
+    border-top: 2px dashed;
+    border-color: #F7CFD8 !important;
+    margin: 0;
+    padding: 30px;
+}
+
+.timeline-item:nth-child(even) {
+    border-left: 2px dashed;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    margin-right: 30px;
+    padding-right: 0;
+}
+
+.timeline-item:nth-child(odd) {
+    border-right: 2px dashed;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    margin-left: 30px;
+    padding-left: 0;
+}
+
+.timeline-item:first-child {
+    border-top: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.timeline-item:last-child {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* @import url("https://fonts.googleapis.com/css?family=Heebo:900|Roboto|Satisfy&display=swap"); */
+
+
+.Header__container {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5em;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1em 5vw;
+    width: 100%;
+}
+
+.Header__left {
+    display: flex;
+    flex-direction: row;
+    font-family: "Satisfy", cursive;
+}
+
+.Header__logo {
+    width: 4.5em;
+    margin: auto;
+}
+
+.Header__title {
+    display: flex;
+    margin-left: 0.6em;
+}
+
+h1 {
+    font-weight: normal;
+    margin: 0.1em;
+}
+
+.Header__menu {
+    margin: auto 0;
+    display: flex;
+    flex-direction: row;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+.Header__menuItem {
+    list-style-type: none;
+    margin: auto 1em;
+}
+
+.Hero {
+    color: white;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.Hero__content {
+    margin: 40vh auto auto 10vw;
+    width: 50%;
+}
+
+.Hero__title {
+    font-family: "Heebo", sans-serif;
+    font-weight: 900;
+    margin: 0;
+    text-shadow: 0px 0px 8px black;
+    font-size: 3em;
+    line-height: 1em;
+}
+
+.Hero__subtitle {
+    opacity: 0.85;
+    margin-top: 0.5em;
+    text-shadow: 0px 0px 8px black;
+    font-size: 1.5em;
+}
+
+.Hero__action {
+    height: 2em;
+    border-radius: 2em;
+    background-color: #c49000;
+    color: white;
+    border: none;
+    padding: 0.4em 2em;
+    box-shadow: 0px 0px 8px black;
+    position: relative;
+    width: 7em;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    .Hero__content {
+        width: 90%;
+        margin: 40vh 2em auto 2em;
+    }
+}
+
+.Hero__action:hover {
+    animation: callToAction 1500ms ease-in infinite;
+}
+
+@keyframes callToAction {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.07);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+
+    60% {
+        transform: scale(1.07);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.Hero__actionText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    font-family: "Heebo", sans-serif;
+    font-size: 1.1em;
+    transform: translate(-50%, -50%);
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.2);
+}
+
+@media (max-height: 500px) {
+    .Hero__title {
+        font-size: 2em;
+    }
+
+    .Hero__subtitle {
+        font-size: 1em;
+    }
+
+    .Hero__action {
+        height: 1.4em;
+        border-radius: 1.4em;
+        width: 4.5em;
+    }
+
+    .Hero__actionText {
+        font-size: 0.9em;
+    }
+}
+
+.Hero__image {
+    display: inline-block;
+    position: absolute;
+    z-index: -10;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    background-image: url("images/christmas-background-with-snowflakes-flowing-waves.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.Hero__mask {
+    position: absolute;
+    z-index: -8;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(#180047, #060231 50%);
+    mix-blend-mode: multiply;
+    opacity: 0.5;
+}
+
+.Hero__snowfall {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -6;
+    opacity: 0.75;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #A6F1E0;
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.about-text h2 {
+    font-size: 28px;
+    color: #F7CFD8;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    background: #73C7C7;
+    color: #1E1E2F;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #A6F1E0;
+}
