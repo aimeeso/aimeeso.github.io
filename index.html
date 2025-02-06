@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/YOUR_FONT_AWESOME_KIT.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -73,7 +74,7 @@
         }
 
         .skills-section {
-            background: black;
+            background: #0a0a0a;
             color: #ffffff;
             padding: 60px 20px;
             text-align: center;
@@ -284,6 +285,54 @@
             background-color: #f7cfd8;
             color: #0a0a0a;
         }
+
+        .social-icons a {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #73C7C7;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #A6F1E0;
+            /* Mint Green */
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer-container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .footer-links a {
+            color: #A6F1E0;
+            /* Mint Green */
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #F7CFD8;
+            /* Light Pink */
+        }
+
+        .footer-social a {
+            color: #A6F1E0;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+
+        .footer-social a:hover {
+            color: #F4F8D3;
+            /* Pale Green */
+        }
     </style>
 </head>
 
@@ -472,7 +521,7 @@
 
         <!-- Backend Projects -->
         <div class="project-category">
-            <h3>Backend</h3>
+            <h3>Web Applications</h3>
             <div class="project-grid">
                 <div class="project-card">
                     <img src="images/aper_1.png" alt="Backend" class="project-image">
@@ -654,7 +703,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- ETL Projects -->
         <div class="project-category">
             <h3>ETL</h3>
@@ -669,8 +718,10 @@
                     </div>
                     <h3 class="project-title">ETL Pipelines for GA4 and Offline Data</h3>
                     <p class="project-duration">2024</p>
-                    <p class="project-description">Designed Delta tables and implemented PySpark notebooks for Data Warehouse solutions.Studied API guides of platforms like Google Ads and Facebook Ads and transformed data to match required formats.</p>
-                </div> 
+                    <p class="project-description">Designed Delta tables and implemented PySpark notebooks for Data
+                        Warehouse solutions.Studied API guides of platforms like Google Ads and Facebook Ads and
+                        transformed data to match required formats.</p>
+                </div>
 
                 <div class="project-card">
                     <img src="images/bigquery_interface.png" alt="WordPress" class="project-image">
@@ -682,11 +733,12 @@
                     <h3 class="project-title">GA4 Data Extraction and Transformation Workflow</h3>
                     <p class="project-duration">2023 - 2024</p>
                     <p class="project-description">Transformed daily GA4 data in BigQuery into actionable user insights.
-                        Verified data integrity through extensive testing using dummy data and multiple scenarios to ensure correctness.</p>
+                        Verified data integrity through extensive testing using dummy data and multiple scenarios to
+                        ensure correctness.</p>
                 </div>
             </div>
         </div>
-                
+
         <!-- CRM -->
         <div class="project-category">
             <h3>CRM</h3>
@@ -700,8 +752,9 @@
                     </div>
                     <h3 class="project-title">Email Marketing Campaigns</h3>
                     <p class="project-duration">2023 - 2024</p>
-                    <p class="project-description">Set up 8+ campaigns featuring EDMs, data extensions, automations and AMPscript-driven Cloud Pages, resulting in 3,000+ new leads.</p>
-                </div> 
+                    <p class="project-description">Set up 8+ campaigns featuring EDMs, data extensions, automations and
+                        AMPscript-driven Cloud Pages, resulting in 3,000+ new leads.</p>
+                </div>
 
                 <div class="project-card">
                     <img src="images/hubspot-workflow.webp" alt="WordPress" class="project-image">
@@ -711,12 +764,13 @@
                     </div>
                     <h3 class="project-title">Custom HubSpot Workflow Action</h3>
                     <p class="project-duration">2024</p>
-                    <p class="project-description">Integrated APIs from SMS providers and Salesforce to create custom workflow actions.</p>
+                    <p class="project-description">Integrated APIs from SMS providers and Salesforce to create custom
+                        workflow actions.</p>
                 </div>
             </div>
         </div>
 
-                        
+
         <!-- standalone -->
         <div class="project-category">
             <h3>Standalone Applications</h3>
@@ -733,9 +787,10 @@
                     </div>
                     <h3 class="project-title">Student Exercise Record System</h3>
                     <p class="project-duration">2019</p>
-                    <p class="project-description">Developed a web application to record student exercise activities for an elementary school.
+                    <p class="project-description">Developed a web application to record student exercise activities for
+                        an elementary school.
                         Added features such as ambassador shift schedules and a detailed chart dashboard.</p>
-                </div> 
+                </div>
 
                 <div class="project-card">
                     <img src="images/web-game.png" alt="WordPress" class="project-image">
@@ -752,7 +807,43 @@
         </div>
     </section>
 
+    <section id="contact" class="section">
+        <div class="">
+            <div class="contact-info">
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">Feel free to reach out.</p>
+                <p class="section-subtitle">Email: <a href="mailto:yantungso.aimee@gmail.com"
+                        style="color: white;">yantungso.aimee@gmail.com</a>
+                </p>
+                <div class="social-icons">
+                    <a href="https://github.com/aimeeso" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/aimee-so-4b46761a5/" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <script src="script.js"></script>
 </body>
+
+<footer>
+    <div class="footer-container">
+        <p>© 2025 Aimee So. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-social">
+            <a href="https://github.com/aimeeso" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/aimee-so-4b46761a5/" target="_blank"><i
+                    class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+</footer>
+
 
 </html>
